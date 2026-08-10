@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Sparkles, CheckCircle2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { weddingConfig } from '../config/weddingConfig';
+const ramImg = '/src/assets/Ram.png';
 import { soundManager } from '../utils/sounds';
 import { lockBodyScroll, unlockBodyScroll } from '../utils/scrollLock';
 
@@ -172,7 +173,7 @@ export const InteractiveHaldiModal: React.FC<Props> = ({ isOpen, onClose, select
 
                 {/* Cute Haldi Couple Vector Artwork */}
                 <div className="w-36 h-36 my-1 relative">
-                  <img src="/src/assets/Ram.png" alt="Ganesha" className="w-full h-full object-contain" />
+                  <img src={ramImg} alt="Ganesha" className="w-full h-full object-contain" />
                 </div>
 
                 {/* Event Timing & Venue (use config data) */}

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Sparkles, Heart } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { weddingConfig } from '../config/weddingConfig';
+const ramImg = '/src/assets/Ram.png';
 import { soundManager } from '../utils/sounds';
 import { lockBodyScroll, unlockBodyScroll } from '../utils/scrollLock';
 
@@ -165,7 +166,7 @@ export const InteractiveWeddingModal: React.FC<Props> = ({ isOpen, onClose, sele
             {/* Holy Fire & Kalash Sacred Artwork */}
             <div className="my-4 flex flex-col items-center">
               <div className="w-28 h-28 relative">
-                <img src="/src/assets/Ram.png" alt="Ganesha" className="w-full h-full object-contain filter drop-shadow" />
+                <img src={ramImg} alt="Ganesha" className="w-full h-full object-contain filter drop-shadow" />
               </div>
 
                 {/* Ceremony Details (use event data) */}

@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { weddingConfig } from '../config/weddingConfig';
+// Use runtime asset paths to avoid TypeScript image-module issues
+const ganeshaImg = '/src/assets/ganesha.png';
+const ramImg = '/src/assets/Ram.png';
 
 export const HeroWelcome: React.FC = () => {
   const scrollToContent = () => {
@@ -40,7 +43,7 @@ export const HeroWelcome: React.FC = () => {
         className="flex flex-col items-center text-center mt-6 z-10"
       >
         <div className="w-28 h-28 mb-2 flex items-center justify-center filter drop-shadow-lg rounded-full p-2 isolate bg-gradient-to-br from-amber-100 via-amber-50 to-rose-50 overflow-hidden">
-          <img src="/src/assets/ganesha.png" alt="Ganesha" className="w-full h-full object-contain mix-blend-multiply" />
+          <img src={ganeshaImg} alt="Ganesha" className="w-full h-full object-contain mix-blend-multiply" />
         </div>
       </motion.div>
 
@@ -58,7 +61,7 @@ export const HeroWelcome: React.FC = () => {
             {/* Golden Radiant Ring */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#d4af37] via-[#fef08a] to-[#d4af37] animate-pulse-subtle p-1 shadow-lg">
               <div className="w-full h-full rounded-full overflow-hidden relative flex items-center justify-center bg-gradient-to-tr from-yellow-50 via-amber-100 to-rose-50 isolate p-1">
-                <img src="/src/assets/Ram.png" alt="Ganesha" className="w-full h-full object-contain p-2 mix-blend-multiply filter drop-shadow-sm" />
+                <img src={ramImg} alt="Ganesha" className="w-full h-full object-contain p-2 mix-blend-multiply filter drop-shadow-sm" />
               </div>
             </div>
 

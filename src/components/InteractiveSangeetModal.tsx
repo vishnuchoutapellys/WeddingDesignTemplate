@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Sparkles, Music2, PartyPopper } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { weddingConfig } from '../config/weddingConfig';
+const ramImg = '/src/assets/Ram.png';
 import { soundManager } from '../utils/sounds';
 import { lockBodyScroll, unlockBodyScroll } from '../utils/scrollLock';
 
@@ -101,7 +102,7 @@ export const InteractiveSangeetModal: React.FC<Props> = ({ isOpen, onClose, sele
                 whileTap={{ scale: 0.92 }}
                 className="relative w-48 h-36 flex items-center justify-center cursor-pointer outline-none group"
               >
-                <img src="/src/assets/Ram.png" alt="Ganesha" className="w-full h-full object-contain filter drop-shadow-xl" />
+                <img src={ramImg} alt="Ganesha" className="w-full h-full object-contain filter drop-shadow-xl" />
 
                 {/* Floating Music Notes on Tap */}
                 {isBeating && (
