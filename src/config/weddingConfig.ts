@@ -242,9 +242,9 @@ export const weddingConfig: WeddingConfig = {
     }
   ],
   music: {
-    title: "Mangalyam Thanthunanena (Royal Wedding Instrumental)",
-    artist: "Shehnai & Flute Ensemble",
-    audioUrl: "https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=indian-flute-and-sitar-ambient-112199.mp3",
+    title: "Wedding Song (Full Track)",
+    artist: "Selected Track",
+    audioUrl: "/assets/WeddingSong.mpeg",
     autoPlay: true
   }
 };
