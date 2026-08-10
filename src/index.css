@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  }
+}
+
+/* Custom Royal Theme Styles */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-cinzel-dec {
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-alex {
+  font-family: 'Alex Brush', cursive;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Gold Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #b38728 0%, #fbf5b7 25%, #da9100 50%, #fdf5a6 75%, #a2790d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* More vivid, colorful gradient for prominent headings */
+.vibrant-gradient-text {
+  background: linear-gradient(90deg, #ff7a18 0%, #ff3d81 33%, #7f00ff 66%, #00c6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #c59b27 0%, #e6ca65 40%, #c99320 70%, #f3de8a 100%);
+}
+
+.gold-border {
+  border-image: linear-gradient(to bottom right, #e6ca65, #b38728, #f5e49e, #8f651b) 1;
+}
+
+/* Traditional Parchment / Card Background (simplified softer tone) */
+.parchment-card {
+  background: linear-gradient(180deg, #fffaf0 0%, #fffdf8 100%);
+}
+
+/* Royal Maroon Card */
+.royal-maroon-card {
+  background: linear-gradient(145deg, #5c0617 0%, #3f020c 100%);
+  box-shadow: 0 10px 25px -5px rgba(92, 6, 23, 0.4), 0 8px 10px -6px rgba(92, 6, 23, 0.3);
+}
+
+/* Ornate Card Frame with Corner Accents */
+.ornate-frame {
+  position: relative;
+  box-shadow: 0 15px 35px -5px rgba(110, 44, 0, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.3);
+}
+
+.ornate-frame::before,
+.ornate-frame::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.ornate-frame::before {
+  top: 8px;
+  left: 8px;
+  border-top: 2px solid #d4af37;
+  border-left: 2px solid #d4af37;
+}
+
+.ornate-frame::after {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 2px solid #d4af37;
+  border-right: 2px solid #d4af37;
+}
+
+/* Subtle Shimmer for Badges and Buttons */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 3s infinite;
+}
+
+/* Scratch Card Canvas Cursor */
+.scratch-cursor {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='%23f59e0b'%3E%3Ccircle cx='12' cy='12' r='8' fill='%23f59e0b' opacity='0.8' stroke='%23d97706' stroke-width='2'/%3E%3C/svg%3E") 12 12, auto;
+}
+
+/* Henna Pen Cursor */
+.henna-cursor {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M3 21l3-1 11-11-2-2L4 18l-1 3z' fill='%23780016' stroke='%23d4af37' stroke-width='1.5'/%3E%3Ccircle cx='19' cy='5' r='2' fill='%23d4af37'/%3E%3C/svg%3E") 3 21, crosshair;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fdfbf7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b38728;
+}
