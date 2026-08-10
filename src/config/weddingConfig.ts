@@ -80,23 +80,23 @@ export interface WeddingConfig {
 
 export const weddingConfig: WeddingConfig = {
   bride: {
-    name: "Sri Lakshmi Sravani",
-    fullName: "Chi.la.sow Sri Lakshmi Sravani (Doctor)",
+    name: "Sravani",
+    fullName: "Chi.la.sow Sravani (Doctor)",
     father: "Somu Sudhakar",
     mother: "",
     parentsDisplay: "D/o Somu Sudhakar",
     bio: ""
   },
   groom: {
-    name: "SitaRam Charan Teja",
-    fullName: "Chi. SitaRam Charan Teja (Software)",
+    name: "Ram Charan Teja",
+    fullName: "Chi. Ram Charan Teja (Software)",
     father: "Charugulla Srinivas",
     mother: "",
     parentsDisplay: "S/o Charugulla Srinivas",
     bio: ""
   },
   weddingDetails: {
-    title: "SitaRam Charan Teja & Sri Lakshmi Sravani",
+    title: "Ram Charan Teja weds Sravani",
     hashtag: "#RAM Weds SRAVANI",
     tagline: "Together with their families, invite you to celebrate love, tradition and new beginnings.",
     mainDate: "26 August 2026",
@@ -116,7 +116,7 @@ export const weddingConfig: WeddingConfig = {
       id: "pellikoduku",
       day: "SATURDAY, 22 AUGUST 2026",
       date: "22 Aug 2026",
-      title: "PelliKoduku",
+      title: "Upanayanam & Pellikoduku",
       subTitle: "Groom's Rituals & Blessings",
       time: "5:00 PM onwards",
       venue: "MY Home, Bhadrachalam",
@@ -193,7 +193,7 @@ export const weddingConfig: WeddingConfig = {
     {
       year: "2025",
       title: "The Ring & The Promise",
-      description: "Under starry skies, SitaRam asked the easiest question and Sri Lakshmi Sravani gave the easiest 'Yes!' of her life.",
+      description: "Under starry skies, SitaRam asked the easiest question and Sravani gave the easiest 'Yes!' of her life.",
       tag: "Forever Begins"
     },
     {
@@ -207,7 +207,7 @@ export const weddingConfig: WeddingConfig = {
     {
       id: 1,
       url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80",
-      caption: "SitaRam Charan Teja & Sri Lakshmi Sravani — Golden Hour Glow",
+      caption: "Ram Charan Teja Weds Sravani — Golden Hour Glow",
       category: "portraits"
     },
     {

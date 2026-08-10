@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { weddingConfig } from '../config/weddingConfig';
 // Use runtime asset paths to avoid TypeScript image-module issues
-const ganeshaImg = '/src/assets/ganesha.png';
-const ramImg = '/src/assets/Ram.png';
+const ganeshaImg = '/assets/ganesha.png';
+const ramImg = '/assets/Ram.png';
 
 export const HeroWelcome: React.FC = () => {
   const scrollToContent = () => {

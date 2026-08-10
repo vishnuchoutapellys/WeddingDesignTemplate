@@ -31,7 +31,7 @@ export const InvitationCard: React.FC = () => {
               {weddingConfig.groom.name}
             </h2>
             <div className="flex items-center justify-center my-1">
-              <span className="text-xl font-cormorant text-[#b38728] italic font-semibold">and</span>
+              <span className="text-xl font-cormorant text-[#b38728] italic font-semibold">Weds</span>
             </div>
             <h2 className="text-4xl sm:text-5xl font-script text-[#5c0617] leading-none mt-1">
               {weddingConfig.bride.name}

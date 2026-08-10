@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Sparkles, Heart } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { weddingConfig } from '../config/weddingConfig';
-const ramImg = '/src/assets/Ram.png';
+const ramImg = '/assets/Ram.png';
 import { soundManager } from '../utils/sounds';
 import { lockBodyScroll, unlockBodyScroll } from '../utils/scrollLock';
 
