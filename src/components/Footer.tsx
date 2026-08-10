@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, ArrowUp, Sparkles } from 'lucide-react';
+import { ArrowUp, Sparkles } from 'lucide-react';
 import { weddingConfig } from '../config/weddingConfig';
 
 export const Footer: React.FC = () => {

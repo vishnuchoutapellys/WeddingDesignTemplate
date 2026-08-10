@@ -150,7 +150,7 @@ export const InteractiveMehndiModal: React.FC<Props> = ({ isOpen, onClose, selec
 
               {/* Heart Center Card (Revealed) */}
               <div className="relative w-full my-auto flex flex-col items-center justify-center px-4 py-2">
-                <div className={`transition-all duration-700 ${isCompleted ? 'scale-105 opacity-100' : 'opacity-85'}`}>
+                <div className={`transition-all duration-700 ${isFullyRevealed ? 'scale-105 opacity-100' : 'opacity-85'}`}>
                   {(() => {
                     const id = selectedEventId || 'mehndi';
                     const evt = weddingConfig.events.find(e => e.id === id);

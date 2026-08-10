@@ -16,7 +16,6 @@ export const InteractiveWeddingModal: React.FC<Props> = ({ isOpen, onClose, sele
   const [blessingCount, setBlessingCount] = useState<number>(0);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [isScratching, setIsScratching] = useState<boolean>(false);
-  const [scratchedPercent, setScratchedPercent] = useState<number>(0);
   const [isFullyRevealed, setIsFullyRevealed] = useState<boolean>(false);
 
   const showerBlessings = () => {
@@ -42,7 +41,6 @@ export const InteractiveWeddingModal: React.FC<Props> = ({ isOpen, onClose, sele
 
   useEffect(() => {
     if (!isOpen) {
-      setScratchedPercent(0);
       setIsFullyRevealed(false);
       return;
     }
@@ -118,8 +116,6 @@ export const InteractiveWeddingModal: React.FC<Props> = ({ isOpen, onClose, sele
     }
 
     const percent = Math.round((transparentCount / (totalPixels / 4)) * 100);
-    setScratchedPercent(percent);
-
     if (percent > 45 && !isFullyRevealed) {
       revealAll();
     }
@@ -127,7 +123,6 @@ export const InteractiveWeddingModal: React.FC<Props> = ({ isOpen, onClose, sele
 
   const revealAll = () => {
     setIsFullyRevealed(true);
-    setScratchedPercent(100);
     const canvas = canvasRef.current;
     if (canvas) {
       const ctx = canvas.getContext('2d');
