@@ -119,10 +119,10 @@ export const HeroWelcome: React.FC = () => {
           {/* Parents Display */}
           <div className="grid grid-cols-2 gap-4 my-6 text-[12px] sm:text-[13px] text-[#78543e] font-serif border-y border-[#d4af37]/30 py-3">
             <div className="border-r border-[#d4af37]/30 pr-2">
-              <p className="font-semibold font-script text-[#5c0617]">{weddingConfig.groom.parentsDisplay}</p>
+              <p className="font-semibold italic font-serif text-[#5c0617]">{weddingConfig.groom.parentsDisplay}</p>
             </div>
             <div className="pl-2">
-              <p className="font-semibold font-script text-[#5c0617]">{weddingConfig.bride.parentsDisplay}</p>
+              <p className="font-semibold italic font-serif text-[#5c0617]">{weddingConfig.bride.parentsDisplay}</p>
             </div>
           </div>
 
