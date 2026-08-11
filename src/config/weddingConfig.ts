@@ -105,7 +105,7 @@ export const weddingConfig: WeddingConfig = {
     place: "Kanchikacherla",
     fullAddress: "A1 Convention Hall, Kanchikacherla, Andhra Pradesh",
     googleMapsEmbedUrl: "",
-    googleMapsDirectionUrl: "",
+    googleMapsDirectionUrl: "https://maps.app.goo.gl/sqhZyy3mPT4rPUmi6",
     countdownTarget: "2026-08-26T22:16:00+05:30",
     contactNumber: "9014249898",
     whatsappNumber: "919014249898",

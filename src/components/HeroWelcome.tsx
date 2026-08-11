@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { weddingConfig } from '../config/weddingConfig';
+import { Calendar, MapPin, Heart } from 'lucide-react';
 // Use runtime asset paths to avoid TypeScript image-module issues
 const ganeshaImg = '/assets/ganesha.png';
 const ramImg = '/assets/Ram.png';
@@ -13,13 +14,6 @@ export const HeroWelcome: React.FC = () => {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
-  const extractProfession = (full: string) => {
-    const m = full.match(/\(([^)]+)\)/);
-    return m ? m[1] : '';
-  };
-  const brideProfession = extractProfession(weddingConfig.bride.fullName) || 'Doctor';
-  const groomProfession = extractProfession(weddingConfig.groom.fullName) || 'Software';
 
   return (
     <section className="relative min-h-[92vh] flex flex-col items-center justify-between pt-10 pb-8 px-4 sm:px-6 bg-gradient-to-b from-[#fcf5e5] via-[#fdf9f0] to-[#fbf8f2] overflow-hidden">
@@ -61,7 +55,7 @@ export const HeroWelcome: React.FC = () => {
             {/* Golden Radiant Ring */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#d4af37] via-[#fef08a] to-[#d4af37] animate-pulse-subtle p-1 shadow-lg">
               <div className="w-full h-full rounded-full overflow-hidden relative flex items-center justify-center bg-gradient-to-tr from-yellow-50 via-amber-100 to-rose-50 isolate p-1">
-                <img src={ramImg} alt="Ganesha" className="w-full h-full object-contain p-2 mix-blend-multiply filter drop-shadow-sm" />
+                <img src={ramImg} alt="Couple" className="w-full h-full object-cover mix-blend-multiply filter drop-shadow-sm" />
               </div>
             </div>
 
@@ -80,7 +74,7 @@ export const HeroWelcome: React.FC = () => {
           </p>
 
           {/* Bride & Groom Creative Typography */}
-          <div className="my-2">
+          {/* <div className="my-2">
             <h1 className="text-[2rem] sm:text-[2.5rem] font-script font-extrabold tracking-tight text-transparent bg-clip-text vibrant-gradient-text leading-snug md:leading-[1.5] whitespace-nowrap sm:whitespace-normal overflow-x-auto">
               {weddingConfig.groom.name}
               <span className="ml-2 text-sm align-middle text-[#7a5c43] font-serif font-medium">({groomProfession})</span>
@@ -96,10 +90,10 @@ export const HeroWelcome: React.FC = () => {
               {weddingConfig.bride.name}
               <span className="ml-2 text-sm align-middle text-[#7a5c43] font-serif font-medium">({brideProfession})</span>
             </h2>
-          </div>
+          </div> */}
 
           {/* Key Date & Venue Highlight */}
-          <div className="mt-5 pt-4 border-t border-[#d4af37]/40 text-center">
+          {/* <div className="mt-5 pt-4 border-t border-[#d4af37]/40 text-center">
             <p className="text-[13px] font-semibold text-[#5c0617] tracking-wider uppercase font-cinzel">
               {weddingConfig.weddingDetails.mainDate}
             </p>
@@ -109,6 +103,59 @@ export const HeroWelcome: React.FC = () => {
             <p className="text-[13px] font-bold text-[#800a22] mt-1 font-serif">
               {weddingConfig.weddingDetails.venueName}, {weddingConfig.weddingDetails.place}
             </p>
+          </div> */}
+          <div className="my-4">
+            <h2 className="text-4xl sm:text-5xl font-script text-[#5c0617] leading-none mb-2">
+              {weddingConfig.groom.name}
+            </h2>
+            <div className="flex items-center justify-center my-1">
+              <span className="text-xl text-[#b38728] font-script font-semibold">Weds</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-script text-[#5c0617] leading-none mt-1">
+              {weddingConfig.bride.name}
+            </h2>
+          </div>
+
+          {/* Parents Display */}
+          <div className="grid grid-cols-2 gap-4 my-6 text-[12px] sm:text-[13px] text-[#78543e] font-serif border-y border-[#d4af37]/30 py-3">
+            <div className="border-r border-[#d4af37]/30 pr-2">
+              <p className="font-semibold font-script text-[#5c0617]">{weddingConfig.groom.parentsDisplay}</p>
+            </div>
+            <div className="pl-2">
+              <p className="font-semibold font-script text-[#5c0617]">{weddingConfig.bride.parentsDisplay}</p>
+            </div>
+          </div>
+
+          {/* When & Where Blocks */}
+          <div className="grid grid-cols-2 gap-4 my-6">
+              <div className="bg-[#fff9ed] rounded-xl p-4 border border-[#e6ca65]/60 flex flex-col items-center">
+              <div className="w-8 h-8 rounded-full bg-[#fdf2d0] text-[#997b19] flex items-center justify-center mb-1.5 shadow-sm">
+                <Calendar className="w-4 h-4" />
+              </div>
+              <span className="text-[10px] tracking-[0.2em] font-cinzel text-[#800a22] font-bold uppercase">WHEN</span>
+              <p className="text-[13px] font-bold text-[#5c0617] mt-1 font-serif">{weddingConfig.weddingDetails.mainDate}</p>
+              <p className="text-[11px] text-[#78543e]">{weddingConfig.weddingDetails.mainTime}</p>
+            </div>
+
+            <div className="bg-[#fff9ed] rounded-xl p-4 border border-[#e6ca65]/60 flex flex-col items-center">
+              <div className="w-8 h-8 rounded-full bg-[#fdf2d0] text-[#997b19] flex items-center justify-center mb-1.5 shadow-sm">
+                <MapPin className="w-4 h-4" />
+              </div>
+              <span className="text-[10px] tracking-[0.2em] font-cinzel text-[#800a22] font-bold uppercase">WHERE</span>
+              <p className="text-[13px] font-bold text-[#5c0617] mt-1 font-serif">{weddingConfig.weddingDetails.venueName}</p>
+              <p className="text-[11px] text-[#78543e]">{weddingConfig.weddingDetails.place}</p>
+            </div>
+          </div>
+
+          {/* Wedding Hashtag Badge */}
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#5c0617] to-[#800a22] text-[#fbf5b7] px-5 py-2 rounded-full shadow-lg border border-[#d4af37]/60">
+            <Heart className="w-3.5 h-3.5 fill-current text-[#fbf5b7]" />
+            <Heart className="w-3.5 h-3.5 fill-current text-[#fbf5b7]" />
+            <span className="text-[12px] sm:text-[13px] font-bold tracking-widest font-cinzel">
+              {weddingConfig.weddingDetails.hashtag}
+            </span>
+            <Heart className="w-3.5 h-3.5 fill-current text-[#fbf5b7]" />
+            <Heart className="w-3.5 h-3.5 fill-current text-[#fbf5b7]" />
           </div>
         </div>
       </motion.div>

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { PetalFall } from './components/PetalFall';
 import { MusicPlayer } from './components/MusicPlayer';
 import { HeroWelcome } from './components/HeroWelcome';
-import { InvitationCard } from './components/InvitationCard';
 import { FestivitiesTimeline } from './components/FestivitiesTimeline';
 import { PickYourSide } from './components/PickYourSide';
 import { CountdownTimer } from './components/CountdownTimer';
@@ -28,7 +27,7 @@ export function App() {
         <HeroWelcome />
 
         {/* 2. Parchment Save The Date Invitation Card */}
-        <InvitationCard />
+        {/* <InvitationCard /> */}
 
         {/* 3. Four Days of Celebrations & Interactive Ceremonies */}
         <FestivitiesTimeline />
