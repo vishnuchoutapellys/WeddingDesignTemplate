@@ -89,7 +89,7 @@ const photo06 = new URL('../assets/photo-06.png', import.meta.url).href;
 const photo07 = new URL('../assets/photo-07.png', import.meta.url).href;
 const photo08 = new URL('../assets/photo-08.png', import.meta.url).href;
 const photo09 = new URL('../assets/photo-09.png', import.meta.url).href;
-const photo10 = new URL('../assets/photo-10.png', import.meta.url).href;
+// const photo10 = new URL('../assets/photo-10.png', import.meta.url).href;
 
 export const weddingConfig: WeddingConfig = {
   bride: {
