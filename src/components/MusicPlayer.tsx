@@ -20,9 +20,9 @@ export const MusicPlayer: React.FC = () => {
       if (!hasInteracted) {
         setHasInteracted(true);
         if (weddingConfig.music.autoPlay) {
-          // attempt to play but do NOT fall back to procedural BGM automatically
-          playMusic(false);
-        }
+              // attempt to play the uploaded song when the user first interacts
+              playMusic();
+            }
         window.removeEventListener('click', handleFirstInteraction);
         window.removeEventListener('touchstart', handleFirstInteraction);
         window.removeEventListener('scroll', handleFirstInteraction);
@@ -48,26 +48,19 @@ export const MusicPlayer: React.FC = () => {
   // `manual` indicates the play was triggered by the user pressing the music button.
   // Only then do we fall back to the procedural ambient BGM. Automatic attempts
   // (like the first interaction handler) will not start the synth on failure.
-  const playMusic = (manual: boolean = true) => {
+  const playMusic = () => {
     if (audioRef.current) {
       audioRef.current.play().then(() => {
         setIsPlaying(true);
-      }).catch(() => {
-        // Fall back to procedural synth only when user explicitly requested playback
-        if (manual) {
-          soundManager.startAmbientBgm();
-          setIsPlaying(true);
-        } else {
-          setIsPlaying(false);
-        }
+      }).catch((err) => {
+        // If playback fails (autoplay policy / CORS / format), do not start the
+        // procedural synth automatically. Log the error so we can debug.
+        console.warn('Audio playback failed:', err);
+        setIsPlaying(false);
       });
     } else {
-      if (manual) {
-        soundManager.startAmbientBgm();
-        setIsPlaying(true);
-      } else {
-        setIsPlaying(false);
-      }
+      console.warn('Audio element not initialized');
+      setIsPlaying(false);
     }
   };
 
@@ -83,8 +76,8 @@ export const MusicPlayer: React.FC = () => {
     if (isPlaying) {
       pauseMusic();
     } else {
-      // user-initiated -> allow synth fallback on failure
-      playMusic(true);
+      // user-initiated play
+      playMusic();
     }
   };
 
