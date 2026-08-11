@@ -78,6 +78,19 @@ export interface WeddingConfig {
   };
 }
 
+// Import local image assets so Vite can fingerprint them when building
+// Use Vite-compatible runtime URLs so TypeScript doesn't require image module declarations
+const photo01 = new URL('../assets/photo-01.png', import.meta.url).href;
+const photo02 = new URL('../assets/photo-02.png', import.meta.url).href;
+const photo03 = new URL('../assets/photo-03.png', import.meta.url).href;
+const photo04 = new URL('../assets/photo-04.png', import.meta.url).href;
+const photo05 = new URL('../assets/photo-05.png', import.meta.url).href;
+const photo06 = new URL('../assets/photo-06.png', import.meta.url).href;
+const photo07 = new URL('../assets/photo-07.png', import.meta.url).href;
+const photo08 = new URL('../assets/photo-08.png', import.meta.url).href;
+const photo09 = new URL('../assets/photo-09.png', import.meta.url).href;
+const photo10 = new URL('../assets/photo-10.png', import.meta.url).href;
+
 export const weddingConfig: WeddingConfig = {
   bride: {
     name: "Sravani",
@@ -102,7 +115,7 @@ export const weddingConfig: WeddingConfig = {
     mainDate: "26 August 2026",
     mainTime: "10:16 PM",
     venueName: "A1 Convention Hall, Kanchikacherla",
-    place: "Kanchikacherla",
+    place: "",
     fullAddress: "A1 Convention Hall, Kanchikacherla, Andhra Pradesh",
     googleMapsEmbedUrl: "",
     googleMapsDirectionUrl: "https://maps.app.goo.gl/sqhZyy3mPT4rPUmi6",
@@ -179,66 +192,122 @@ export const weddingConfig: WeddingConfig = {
   ],
   storyMilestones: [
     {
-      year: "2022",
-      title: "First Met",
-      description: "A casual coffee conversation that turned into hours of shared laughter, stories, and the spark of something magical.",
+      year: "2026",
+      title: "First Met(March 29th)",
+      description: "It all began with a simple conversation over coffee. What started as a casual meeting soon turned into meaningful conversations, shared smiles, and the beginning of a beautiful connection.",
       tag: "The First Spark"
     },
     {
-      year: "2024",
-      title: "The Journey Together",
-      description: "Through countless road trips, shared dreams, family get-togethers, and quiet sunsets, two hearts became inseparable.",
+      year: "2026",
+      title: "The Journey Together(May 3rd)",
+      description: "With busy workdays, conversations that lasted late into the night, family moments, and time spent discovering each other, their friendship slowly blossomed into something deeper and more special.",
       tag: "Growing In Love"
     },
     {
-      year: "2025",
-      title: "The Ring & The Promise",
-      description: "Under starry skies, SitaRam asked the easiest question and Sravani gave the easiest 'Yes!' of her life.",
+      year: "2026",
+      title: "The Ring & The Promise(July 5th)",
+      description: "With the blessings of their families, two hearts took the next step. A simple question, a heartfelt “Yes,” and a promise to walk through life together marked the beginning of their forever.",
       tag: "Forever Begins"
     },
     {
       year: "2026",
-      title: "The Royal Wedding",
-      description: "Two souls, two families, united in love and sacred traditions at Bhadrachalam.",
+      title: "The Royal Wedding(Aug 26th)",
+      description: "Two accomplished individuals, two loving families, and one beautiful journey come together in a celebration of love, tradition, and togetherness. With the blessings of family and loved ones, they begin their new chapter together at the sacred and beautiful Bhadrachalam",
       tag: "The Big Day"
     }
   ],
   gallery: [
+    // {
+    //   id: 1,
+    //   url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80",
+    //   caption: "Ram Charan Teja Weds Sravani — Golden Hour Glow",
+    //   category: "portraits"
+    // },
+    // {
+    //   id: 2,
+    //   url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+    //   caption: "Sacred Ceremonies & Golden Blessings",
+    //   category: "ceremony"
+    // },
+    // {
+    //   id: 3,
+    //   url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
+    //   caption: "Floral Elegance & Joyful Smiles",
+    //   category: "memories"
+    // },
+    // {
+    //   id: 4,
+    //   url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80",
+    //   caption: "Hand in Hand, Ready for Forever",
+    //   category: "engagement"
+    // },
+    // {
+    //   id: 5,
+    //   url: "https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=800&q=80",
+    //   caption: "Intricate Henna & Joyous Festivities",
+    //   category: "ceremony"
+    // },
+    // {
+    //   id: 6,
+    //   url: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80",
+    //   caption: "Celebrations, Music & Laughter",
+    //   category: "memories"
+    // }
+    // ,
+    // User-added placeholders: replace these URLs with real images placed in `public/assets/`
     {
-      id: 1,
-      url: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80",
-      caption: "Ram Charan Teja Weds Sravani — Golden Hour Glow",
+      id: 7,
+      url: photo01,
+      caption: "",
       category: "portraits"
     },
     {
-      id: 2,
-      url: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
-      caption: "Sacred Ceremonies & Golden Blessings",
+      id: 8,
+      url: photo02,
+      caption: "",
       category: "ceremony"
     },
     {
-      id: 3,
-      url: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80",
-      caption: "Floral Elegance & Joyful Smiles",
+      id: 9,
+      url: photo03,
+      caption: "",
       category: "memories"
     },
     {
-      id: 4,
-      url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80",
-      caption: "Hand in Hand, Ready for Forever",
+      id: 10,
+      url: photo04,
+      caption: "",
+      category: "portraits"
+    },
+    {
+      id: 11,
+      url: photo05,
+      caption: "",
       category: "engagement"
     },
     {
-      id: 5,
-      url: "https://images.unsplash.com/photo-1544077960-604201fe74bc?auto=format&fit=crop&w=800&q=80",
-      caption: "Intricate Henna & Joyous Festivities",
+      id: 12,
+      url: photo06,
+      caption: "",
       category: "ceremony"
     },
     {
-      id: 6,
-      url: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=800&q=80",
-      caption: "Celebrations, Music & Laughter",
+      id: 13,
+      url: photo07,
+      caption: "",
       category: "memories"
+    },
+    {
+      id: 14,
+      url: photo08,
+      caption: "",
+      category: "portraits"
+    },
+    {
+      id: 15,
+      url: photo09,
+      caption: "",
+      category: "ceremony"
     }
   ],
   music: {

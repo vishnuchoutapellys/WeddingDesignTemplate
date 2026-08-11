@@ -32,7 +32,7 @@ export const VenueMap: React.FC = () => {
           {weddingConfig.weddingDetails.venueName}
         </h2>
         <p className="text-[13px] text-[#78543e] font-serif mt-1">
-          {weddingConfig.weddingDetails.place}, Telangana
+          {weddingConfig.weddingDetails.place}
         </p>
 
         {/* Address Card */}

@@ -132,7 +132,7 @@ export const RSVPSection: React.FC<Props> = ({ selectedTeam }) => {
               required
               value={guestName}
               onChange={(e) => setGuestName(e.target.value)}
-              placeholder="e.g. Lakshmi Iyer"
+              placeholder="E.g. Sai Chandra Kanth"
               className="w-full px-4 py-2.5 rounded-xl border border-[#d4af37]/60 bg-[#fdfbf7] text-[#4a3528] placeholder-[#9c8273] focus:outline-none focus:ring-2 focus:ring-[#800a22]/50 font-sans text-[13px]"
             />
           </div>
