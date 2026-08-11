@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
           <div className="inline-flex items-center gap-4 bg-gradient-to-r from-[#2b0b07]/80 via-[#3b0f10]/60 to-[#5c0617]/70 px-3 py-2 rounded-full border-2 border-[#d4af37] shadow-lg flex-wrap justify-center">
             <Sparkles className="w-5 h-5 text-[#f3e0c8] animate-spin-slow" />
             <div className="flex items-center gap-2">
-              <span className="text-[13px] font-semibold text-[#fdf7e8]">Developed By:-</span>
+              <span className="text-[13px] font-semibold text-[#fdf7e8]">Developed By :-</span>
               <span className="text-[16px] font-bold gold-gradient-text">Choutapelly Vishnu</span>
             </div>
             <div className="h-8 w-px bg-white/10 mx-2 hidden sm:block" />
@@ -65,11 +65,10 @@ export const Footer: React.FC = () => {
               <span className="text-sm font-mono">+91-9014249898</span>
             </a>
 
-            <div className="h-8 w-px bg-white/10 mx-2 hidden sm:block" />
-
             <div className="flex items-center gap-2">
-              <span className="text-[12px] font-semibold text-[#fdf7e8]">Idea By:-</span>
-              <span className="text-[16px] font-bold gold-gradient-text">Saichandrakanth</span>
+              <Sparkles className="w-5 h-5 text-[#f3e0c8] animate-spin-slow" />
+              <span className="text-[13px] font-semibold text-[#fdf7e8]">Vision By :-</span>
+              <span className="text-[16px] font-bold gold-gradient-text">Sai Chandra Kanth</span>
             </div>
           </div>
         </div>
