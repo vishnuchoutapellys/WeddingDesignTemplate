@@ -79,7 +79,7 @@ export const PickYourSide: React.FC<Props> = ({ selectedTeam, onSelectTeam }) =>
               Team Groom
             </span>
             <h3 className="text-xl sm:text-2xl font-script text-[#5c0617] mt-1 font-bold">
-              {weddingConfig.groom.name}
+              Ram Teja
             </h3>
           </motion.button>
 
