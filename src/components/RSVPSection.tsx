@@ -247,16 +247,9 @@ export const RSVPSection: React.FC<Props> = ({ selectedTeam }) => {
             type="submit"
             className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-[#15803d] via-[#16a34a] to-[#15803d] text-white font-cinzel font-bold text-[13px] tracking-widest uppercase shadow-xl hover:shadow-2xl hover:scale-102 active:scale-98 transition-all flex items-center justify-center gap-2 border border-green-400"
           >
-            <Send className="w-4 h-4" /> Send RSVP via WhatsApp
+            <Send className="w-4 h-4" /> Send via WhatsApp
           </button>
         </form>
-
-        {/* Contact Info Footer */}
-        <div className="mt-6 pt-4 border-t border-[#d4af37]/30 text-center">
-          <p className="text-[12px] text-[#78543e]">
-            For queries & accommodations, contact: <a href={`tel:${weddingConfig.weddingDetails.contactNumber}`} className="font-bold text-[#800a22] hover:underline">+91 {weddingConfig.weddingDetails.contactNumber}</a>
-          </p>
-        </div>
       </motion.div>
     </section>
   );
