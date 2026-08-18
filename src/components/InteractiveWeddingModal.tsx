@@ -156,11 +156,16 @@ export const InteractiveWeddingModal: React.FC<Props> = ({ isOpen, onClose, sele
               </button>
             </div>
 
-            {/* Header Title */}
+            {/* Header Title (dynamic based on selected event) */}
             <div className="border-b border-[#d4af37]/40 pb-3">
-              <h3 className="text-3xl font-script text-[#5c0617] mt-1">
-                The Wedding Ceremony
-              </h3>
+              {(() => {
+                const id = selectedEventId || 'wedding';
+                const evt = weddingConfig.events.find(e => e.id === id);
+                const title = evt ? evt.title : 'The Holy Muhurtham';
+                return (
+                  <h3 className="text-3xl font-script text-[#5c0617] mt-1">{title}</h3>
+                );
+              })()}
             </div>
 
             {/* Holy Fire & Kalash Sacred Artwork */}
