@@ -9,33 +9,78 @@ export const MusicPlayer: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Try to initialize audio
-    const audio = new Audio(weddingConfig.music.audioUrl);
+    // Initialize audio element in the DOM for broader autoplay support
+    const audio = document.createElement('audio');
+    audio.src = weddingConfig.music.audioUrl;
     audio.loop = true;
+    audio.preload = 'auto';
+    audio.setAttribute('playsinline', '');
+    audio.crossOrigin = 'anonymous';
     audio.volume = 0.5;
     audioRef.current = audio;
 
-    // Handle user interaction for autoplay policy
-    const handleFirstInteraction = () => {
-      if (!hasInteracted) {
-        setHasInteracted(true);
-        if (weddingConfig.music.autoPlay) {
-              // attempt to play the uploaded song when the user first interacts
-              playMusic();
-            }
-        window.removeEventListener('click', handleFirstInteraction);
-        window.removeEventListener('touchstart', handleFirstInteraction);
-        window.removeEventListener('scroll', handleFirstInteraction);
+    let attemptedAutoplay = false;
+
+    const tryAutoPlay = async () => {
+      if (!audio) return false;
+      try {
+        await audio.play();
+        setIsPlaying(true);
+        attemptedAutoplay = true;
+        return true;
+      } catch (err) {
+        // Try muted autoplay as a fallback (allowed by many mobile browsers)
+        try {
+          audio.muted = true;
+          await audio.play();
+          setIsPlaying(true);
+          attemptedAutoplay = true;
+          return true;
+        } catch (err2) {
+          console.warn('Autoplay attempts failed:', err, err2);
+          return false;
+        }
       }
     };
 
-    window.addEventListener('click', handleFirstInteraction, { once: true });
-    window.addEventListener('touchstart', handleFirstInteraction, { once: true });
-    window.addEventListener('scroll', handleFirstInteraction, { once: true });
+    // Attempt to autoplay immediately (works on some devices/browsers)
+    if (weddingConfig.music.autoPlay) {
+      // immediate attempt; if blocked we rely on first interaction below
+      tryAutoPlay();
+    }
+
+    // Handle user interaction for autoplay policy: unmute or play on first gesture
+    const handleFirstInteraction = async () => {
+      if (!hasInteracted) {
+        setHasInteracted(true);
+        // If we started muted for autoplay, unmute now on user gesture
+        if (audio && audio.muted) {
+          try {
+            audio.muted = false;
+            audio.volume = 0.5;
+            await audio.play();
+            setIsPlaying(true);
+          } catch (err) {
+            console.warn('Play after gesture failed:', err);
+          }
+        } else if (weddingConfig.music.autoPlay && !attemptedAutoplay) {
+          // If we haven't attempted to autoplay yet, try now (gesture allows it)
+          tryAutoPlay();
+        }
+        window.removeEventListener('click', handleFirstInteraction as any);
+        window.removeEventListener('touchstart', handleFirstInteraction as any);
+        window.removeEventListener('scroll', handleFirstInteraction as any);
+      }
+    };
+
+    window.addEventListener('click', handleFirstInteraction as any, { once: true });
+    window.addEventListener('touchstart', handleFirstInteraction as any, { once: true });
+    window.addEventListener('scroll', handleFirstInteraction as any, { once: true });
 
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current.src = '';
         audioRef.current = null;
       }
       soundManager.stopAmbientBgm();
@@ -50,11 +95,11 @@ export const MusicPlayer: React.FC = () => {
   // (like the first interaction handler) will not start the synth on failure.
   const playMusic = () => {
     if (audioRef.current) {
+      audioRef.current.muted = false;
+      audioRef.current.volume = 0.5;
       audioRef.current.play().then(() => {
         setIsPlaying(true);
       }).catch((err) => {
-        // If playback fails (autoplay policy / CORS / format), do not start the
-        // procedural synth automatically. Log the error so we can debug.
         console.warn('Audio playback failed:', err);
         setIsPlaying(false);
       });
@@ -80,6 +125,20 @@ export const MusicPlayer: React.FC = () => {
       playMusic();
     }
   };
+
+  // Render a hidden audio element so browsers have a DOM element to manage
+  // (some mobile browsers prefer this over programmatically created Audio()).
+  // We only render it once so the ref remains stable.
+  useEffect(() => {
+    if (!audioRef.current) return;
+    // If the audio was created programmatically above, append to DOM hidden
+    const audioEl = audioRef.current as HTMLAudioElement;
+    audioEl.style.display = 'none';
+    document.body.appendChild(audioEl);
+    return () => {
+      if (audioEl && audioEl.parentNode) audioEl.parentNode.removeChild(audioEl);
+    };
+  }, []);
 
   return (
     <div className="fixed top-5 right-5 z-50 flex items-center gap-3">

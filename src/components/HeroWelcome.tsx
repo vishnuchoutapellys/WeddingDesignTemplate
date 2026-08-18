@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { ChevronDown, Sparkles } from 'lucide-react';
 import { weddingConfig } from '../config/weddingConfig';
 import { Calendar, MapPin, Heart } from 'lucide-react';
-// Use runtime asset paths to avoid TypeScript image-module issues
-const ganeshaImg = '/assets/ganesha.png';
-const ramImg = '/assets/Ram.png';
+// Use Vite runtime URLs so images from `src/assets` resolve correctly
+const ganeshaImg = new URL('../assets/ganesha.png', import.meta.url).href;
+const ramImg = new URL('../assets/Ramcharan.png', import.meta.url).href;
 
 export const HeroWelcome: React.FC = () => {
   const scrollToContent = () => {

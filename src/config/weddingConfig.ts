@@ -80,15 +80,15 @@ export interface WeddingConfig {
 
 // Import local image assets so Vite can fingerprint them when building
 // Use Vite-compatible runtime URLs so TypeScript doesn't require image module declarations
-const photo01 = new URL('../assets/photo-01.png', import.meta.url).href;
-const photo02 = new URL('../assets/photo-02.png', import.meta.url).href;
-const photo03 = new URL('../assets/photo-03.png', import.meta.url).href;
-const photo04 = new URL('../assets/photo-04.png', import.meta.url).href;
-const photo05 = new URL('../assets/photo-05.png', import.meta.url).href;
-const photo06 = new URL('../assets/photo-06.png', import.meta.url).href;
-const photo07 = new URL('../assets/photo-07.png', import.meta.url).href;
-const photo08 = new URL('../assets/photo-08.png', import.meta.url).href;
-const photo09 = new URL('../assets/photo-09.png', import.meta.url).href;
+const photo01 = new URL('../assets/photo-01.jpg', import.meta.url).href;
+const photo02 = new URL('../assets/photo-02.jpg', import.meta.url).href;
+const photo03 = new URL('../assets/photo-03.jpg', import.meta.url).href;
+const photo04 = new URL('../assets/photo-04.jpg', import.meta.url).href;
+const photo05 = new URL('../assets/photo-05.jpg', import.meta.url).href;
+const photo06 = new URL('../assets/photo-06.jpg', import.meta.url).href;
+const photo07 = new URL('../assets/photo-07.jpg', import.meta.url).href;
+const photo08 = new URL('../assets/photo-08.jpg', import.meta.url).href;
+const photo09 = new URL('../assets/photo-09.jpg', import.meta.url).href;
 // const photo10 = new URL('../assets/photo-10.png', import.meta.url).href;
 
 export const weddingConfig: WeddingConfig = {
