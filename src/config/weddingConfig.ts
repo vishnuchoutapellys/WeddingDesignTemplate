@@ -23,6 +23,7 @@ export interface EventDetail {
 export interface GalleryItem {
   id: number;
   url: string;
+  webpUrl?: string;
   caption: string;
   category: 'memories' | 'engagement' | 'portraits' | 'ceremony';
 }
@@ -60,7 +61,7 @@ export interface WeddingConfig {
     countdownTarget: string; // ISO date string: 2026-12-11T18:00:00+05:30
     contactNumber: string; // 9014249898
     whatsappNumber: string; // 919014249898
-    rsvpDeadline: string; // 15 November 2026
+    rsvpDeadline: string; // 26th August 2026
   };
   events: EventDetail[];
   storyMilestones: {
@@ -122,7 +123,7 @@ export const weddingConfig: WeddingConfig = {
     countdownTarget: "2026-08-26T22:16:00+05:30",
     contactNumber: "9014249898",
     whatsappNumber: "919014249898",
-    rsvpDeadline: "15 November 2026"
+    rsvpDeadline: "26th August 2026"
   },
   events: [
     {
@@ -131,7 +132,7 @@ export const weddingConfig: WeddingConfig = {
       date: "22 Aug 2026",
       title: "Upanayanam & Pellikoduku",
       subTitle: "Groom's Rituals & Blessings",
-      time: "5:00 PM onwards",
+      time: "11:56 AM onwards",
       venue: "MY Home, Bhadrachalam",
       quote: "“Blessings for the groom as a new chapter begins.”",
       interactionType: "wedding",
@@ -147,7 +148,7 @@ export const weddingConfig: WeddingConfig = {
       date: "23 Aug 2026",
       title: "Haldi (Mangala Snanam)",
       subTitle: "Manjal Neerattu Vizha",
-      time: "5:00 PM onwards",
+      time: "10:00 AM onwards",
       venue: "My Home, Bhadrachalam",
       quote: "“Turmeric, laughter and the very first blessings.”",
       interactionType: "haldi",
@@ -317,3 +318,4 @@ export const weddingConfig: WeddingConfig = {
     autoPlay: true
   }
 };
+
