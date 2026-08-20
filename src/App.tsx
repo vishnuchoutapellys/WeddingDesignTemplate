@@ -9,6 +9,7 @@ import { LoveStoryGallery } from './components/LoveStoryGallery';
 import { VenueMap } from './components/VenueMap';
 import { RSVPSection } from './components/RSVPSection';
 import { Footer } from './components/Footer';
+import LinkPreview from './components/LinkPreview';
 
 export function App() {
   const [selectedTeam, setSelectedTeam] = useState<'bride' | 'groom' | null>(null);
@@ -49,6 +50,17 @@ export function App() {
 
         {/* 8. WhatsApp RSVP Section */}
         <RSVPSection selectedTeam={selectedTeam} />
+
+        {/* Example Link Preview (YouTube-like card) */}
+        <div className="py-12 px-4 sm:px-6">
+          <LinkPreview
+            url="https://ramtejawedssravani.online/"
+            title="Ram Charan & Sravani — Wedding Invitation"
+            description="You are warmly invited to celebrate the royal wedding of Sravani and Ram Charan Teja on 26th August 2026."
+            image="/assets/Ram.png"
+            domain="ramtejawedssravani.online"
+          />
+        </div>
 
         {/* 9. Royal Footer */}
         <Footer />
