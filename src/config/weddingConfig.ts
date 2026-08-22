@@ -59,8 +59,8 @@ export interface WeddingConfig {
     googleMapsEmbedUrl: string;
     googleMapsDirectionUrl: string;
     countdownTarget: string; // ISO date string: 2026-12-11T18:00:00+05:30
-    contactNumber: string; // 9014249898
-    whatsappNumber: string; // 919014249898
+    contactNumber: string; // 8754406795
+    whatsappNumber: string; // 918754406795
     rsvpDeadline: string; // 26th August 2026
   };
   events: EventDetail[];
@@ -121,8 +121,8 @@ export const weddingConfig: WeddingConfig = {
     googleMapsEmbedUrl: "",
     googleMapsDirectionUrl: "https://maps.app.goo.gl/sqhZyy3mPT4rPUmi6",
     countdownTarget: "2026-08-26T22:16:00+05:30",
-    contactNumber: "9014249898",
-    whatsappNumber: "919014249898",
+    contactNumber: "+91 8754406795",
+    whatsappNumber: "+91 8754406795",
     rsvpDeadline: "26th August 2026"
   },
   events: [
