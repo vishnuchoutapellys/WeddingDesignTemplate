@@ -56,13 +56,13 @@ export const Footer: React.FC = () => {
             <Sparkles className="w-5 h-5 text-[#f3e0c8] animate-spin-slow" />
             <div className="flex items-center gap-2">
               <span className="text-[13px] font-semibold text-[#fdf7e8]">Developed By :-</span>
-              <span className="text-[16px] font-bold gold-gradient-text">Choutapelly Vishnu</span>
+              <span className="text-[16px] font-bold gold-gradient-text"> Vishnu</span>
             </div>
             <div className="h-8 w-px bg-white/10 mx-2 hidden sm:block" />
 
             <a href="tel:+918754406795" className="inline-flex items-center gap-2 bg-[#b91c1c] px-3 py-1 rounded-md text-sm font-cinzel font-bold text-[#fff6e0] shadow-md border border-[#f3d58a] hover:scale-105 transform transition whitespace-nowrap">
               <span className="text-[12px]">Contact for orders</span>
-              <span className="text-sm font-mono">+91-8754406795</span>
+              <span className="text-sm font-mono">+91-9014249898</span>
             </a>
 
             <div className="flex items-center gap-2">
